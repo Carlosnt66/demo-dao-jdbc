@@ -1,0 +1,28 @@
+/******************************************************************************
+
+                              Online C++ Compiler.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <iostream>
+#include <vector>
+#include<set> 
+#include <algorithm>
+using namespace std;
+
+int main()
+{
+    set<int> unique;
+    int lista[] = {1,2,2,2,3,4,4,5,6};
+    vector<int> v(lista,lista+sizeof(lista)/sizeof(int));
+    for (vector<int>::iterator it = v.begin(); it != v.end(); ++it) {
+        unique.insert(*it);
+    }
+    for (set<int>::iterator it = unique.begin(); it != unique.end(); ++it) {
+        cout << *it << ": "<< count(v.begin(),v.end(),*it) <<endl;
+    }
+
+    return 0;
+}
